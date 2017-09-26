@@ -7,8 +7,7 @@ class Input extends React.Component {
  }
 
  render() {
-console.log(styles)
-   return <input className={styles.sulu} value="Huckberries WHat?asdfas??asdf"/>
+   return <input className={styles.sulu} value="Input EOA"/>
  }
 }
 
