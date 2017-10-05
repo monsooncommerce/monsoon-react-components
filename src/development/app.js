@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Input from '../components/Input';
+import Form from '../components/Form';
 import TreeRoot from '../components/tree';
 
 const manifest = {
@@ -66,19 +67,46 @@ const manifest = {
 }
 
 const selected = manifest['8976'];
+const inputsConfig = [
+  {
+    name: 'hello',
+    defaultValue: 'yoyo',
+    label: 'Growth Margin',
+    suffix: '%',
+    // characterLimit: 3,
+    optional: false,
+    submitOnEnter: true,
+    tests: [],
+  }
+]
+
+const buttonsConfig = [
+  {
+    name: 'save',
+    type: 'default',
+    label: 'Save',
+    action: 'submit'
+  },
+]
 
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit(data) {
+    console.log(data)
   }
 
   render() {
     return(
       <div>
         <h1> EOA Component Library </h1>
-        <Input />
+        <Form buttonsConfig={buttonsConfig} inputsConfig={inputsConfig} onSubmit={this.onSubmit} />
         <TreeRoot rootSet={selected} manifest={manifest} />
       </div>
     )
