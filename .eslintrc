@@ -1,0 +1,19 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+          "experimentalObjectRestSpread": true,
+          "jsx": true
+        }
+    },
+    "rules": {
+        "semi": 2,
+        "comma-dangle": ["error", {
+          "arrays": "never",
+          "objects": "only-multiline",
+          "imports": "only-multiline",
+          "exports": "only-multiline"
+      }]
+    }
+}

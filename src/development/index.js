@@ -15,7 +15,7 @@ const render = (app) => {
     </AppContainer>,
     rootNode
   );
-}
+};
 
 render(App);
 

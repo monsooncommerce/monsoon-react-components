@@ -4,4 +4,4 @@ import Card from '../components/Card';
 export {
   Input,
   Card,
-}
+};

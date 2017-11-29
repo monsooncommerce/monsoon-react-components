@@ -1,0 +1,5 @@
+update react
+decide on styles
+
+push up to npm
+include a component in the app?

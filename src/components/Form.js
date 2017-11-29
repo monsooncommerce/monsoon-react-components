@@ -125,7 +125,7 @@ class Form extends React.Component {
     this.setState(newState);
   }
 
-  getInputs(inputs, submitted, ) {
+  getInputs(inputs, submitted) {
     return Object.keys(inputs).map( inputKey => {
       const input = inputs[inputKey];
 
