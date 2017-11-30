@@ -5,6 +5,7 @@ import DevContainer from './DevContainer';
 import devComponents from './devComponents';
 
 import '../components/index.scss';
+import './indexDev.scss';
 
 class App extends React.Component {
   constructor(props) {

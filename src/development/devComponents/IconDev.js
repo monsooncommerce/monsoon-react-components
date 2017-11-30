@@ -10,8 +10,8 @@ class IconDev extends React.Component {
   displayAllIcons(icons) {
     return Object.keys(icons).map((iconName)=> {
       return (
-        <div>
-          <div>{iconName}</div>
+        <div className="icon-box">
+          <div className="icon-title">{iconName}</div>
           <Icon type={iconName} />
         </div>
       );
@@ -23,8 +23,9 @@ class IconDev extends React.Component {
 
     return(
       <DevSection>
-        <div> Im a happy Icon </div>
-        { allIcons }
+        <div className="icon-rows">
+          { allIcons }
+        </div>
       </DevSection>
     );
   }

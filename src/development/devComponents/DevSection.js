@@ -7,8 +7,7 @@ class DevSection extends React.Component {
 
   render() {
     return(
-      <div>
-        Dev Section
+      <div className="dev-section">
         { this.props.children }
       </div>
     );

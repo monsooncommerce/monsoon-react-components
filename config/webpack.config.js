@@ -4,7 +4,7 @@ const merge = require('webpack-merge');
 
 const commonConfig = merge([
   parts.loadJavascript(),
-  parts.loadStyles(),
+  parts.loadStyles()
 ]);
 
 const developmentConfig = merge([
@@ -24,7 +24,7 @@ const developmentConfig = merge([
     port: process.env.PORT,
   }),
 
-  parts.HtmlWebpackPlugin(),
+  parts.HtmlWebpackPlugin()
 ]);
 
 const productionConfig = merge([{
@@ -43,4 +43,4 @@ module.exports = (env) => {
     return merge([commonConfig, productionConfig]);
   }
   return merge([commonConfig, developmentConfig]);
-}
+};

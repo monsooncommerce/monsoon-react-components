@@ -1,7 +1,7 @@
 import Input from '../components/Input';
-import Card from '../components/Card';
+import Icon from '../components/Icons';
 
 export {
   Input,
-  Card,
+  Icon,
 };

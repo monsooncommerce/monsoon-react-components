@@ -21,13 +21,15 @@ class Icon extends React.Component {
     }
 
     return (
-      <svg className="icon border"
-        viewBox={ icon.viewBox }
-        style={ styles }
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg">
-          { icon.svg }
-      </svg>
+      <div className="icon-wrapper">
+        <svg
+          viewBox={ icon.viewBox }
+          style={ styles }
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg">
+            { icon.svg }
+        </svg>
+      </div>
     );
   }
 }
