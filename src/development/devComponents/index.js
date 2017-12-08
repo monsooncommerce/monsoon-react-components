@@ -1,9 +1,9 @@
-import Buttons from './Buttons';
+import ButtonsDev from './ButtonsDev';
 import IconDev from './IconDev';
 import Home from './Home';
 
 export default {
-  Buttons,
+  ButtonsDev,
   IconDev,
   Home,
 };

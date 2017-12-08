@@ -1,0 +1,15 @@
+@mixin centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin interactable {
+  &:hover {
+    border-color: $dark-grey;
+  }
+
+  &:active {
+    border-color: $active-border;
+  }
+}

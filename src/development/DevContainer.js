@@ -20,7 +20,7 @@ class DevContainer extends React.Component {
 
         <div>
           <Route exact path="/" component={devComponents.Home}/>
-          <Route path="/buttons" component={devComponents.Buttons}/>
+          <Route path="/buttons" component={devComponents.ButtonsDev}/>
           <Route path="/icon" component={devComponents.IconDev}/>
         </div>
       </div>
