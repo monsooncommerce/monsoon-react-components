@@ -1,14 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Enzyme from "enzyme";
 import { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
-Enzyme.configure({ adapter: new Adapter() });
-
-global.requestAnimationFrame = function(callback) {
-  setTimeout(callback, 0);
-};
 
 import Button from './Button';
 
@@ -28,11 +20,17 @@ test('Icon Button', () => {
   expect(snapshot).toMatchSnapshot();
 });
 
-describe('If no type is passed in the button should be default', () => {
+describe('Button Component Should', () => {
 
-  test('Load More Button is Rendered', () => {
+  test('render default if no type is specified', () => {
     const wrapper = shallow(<Button label="I am Button"/>);
 
-    expect(wrapper.find('.button').length).toEqual(1);
+    expect(wrapper.find('.default-button').length).toEqual(1);
+  });
+
+  test('render icon class if type is icon', () => {
+    const wrapper = shallow(<Button icon="growth" type="icon"/>);
+
+    expect(wrapper.find('.icon-button').length).toEqual(1);
   });
 });
