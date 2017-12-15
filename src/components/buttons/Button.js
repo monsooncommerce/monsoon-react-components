@@ -37,10 +37,10 @@ class Button extends React.Component {
 }
 
 Button.defaultProps = {
-  label: 'Click here, dammit',
+  label: 'Click me!',
   onClick: () => {},
   type: 'default',
-  icon: "submit",
+  icon: 'submit',
 };
 
 export default Button;

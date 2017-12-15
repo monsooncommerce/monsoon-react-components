@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default table snapshot test 1`] = `
+<div
+  className="table"
+>
+  <div
+    className="table__row "
+  >
+    <div
+      className="table__cell key"
+    >
+      I
+    </div>
+    <div
+      className="table__cell  value"
+    >
+      am
+    </div>
+  </div>
+  <div
+    className="table__row "
+  >
+    <div
+      className="table__cell key"
+    >
+      a
+    </div>
+    <div
+      className="table__cell  value"
+    >
+      donut
+    </div>
+  </div>
+</div>
+`;

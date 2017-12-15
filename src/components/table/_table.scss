@@ -1,0 +1,36 @@
+.table {
+  &__row {
+    display: flex;
+    background: $light-grey;
+    &:nth-child(2) {
+      background: $dark-grey;
+    }
+  }
+
+  &__cell {
+    padding: 10px;
+    display: flex;
+    flex-grow: 1;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #555;
+    border-color: #555;
+    border-radius: 5px;
+    border-width: .5px;
+
+    &.value {
+      margin-left: auto;
+      flex-basis: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    }
+
+    &.key {
+      flex-basis: 56%;
+      margin-right: 30px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

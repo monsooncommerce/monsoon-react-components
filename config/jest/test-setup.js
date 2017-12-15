@@ -6,3 +6,5 @@ Enzyme.configure({ adapter: new Adapter() });
 global.requestAnimationFrame = function(callback) {
   setTimeout(callback, 0);
 };
+
+console.log('setup has run');

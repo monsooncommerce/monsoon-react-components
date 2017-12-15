@@ -15,6 +15,8 @@ class DevContainer extends React.Component {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/buttons">Buttons</Link></li>
             <li><Link to="/icon">Icons</Link></li>
+            <li><Link to="/loadingIndicator">LoadingIndicator</Link></li>
+            <li><Link to="/table">Table</Link></li>
           </ul>
         </div>
 
@@ -22,6 +24,8 @@ class DevContainer extends React.Component {
           <Route exact path="/" component={devComponents.Home}/>
           <Route path="/buttons" component={devComponents.ButtonsDev}/>
           <Route path="/icon" component={devComponents.IconDev}/>
+          <Route path="/loadingIndicator" component={devComponents.LoadingIndicatorDev}/>
+          <Route path="/table" component={devComponents.TableDev}/>
         </div>
       </div>
 
