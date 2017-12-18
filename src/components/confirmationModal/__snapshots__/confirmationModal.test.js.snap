@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirmation default snapshot 1`] = `
+<div
+  className="confirmation-modal"
+>
+  <div
+    className="confirmation-modal__message"
+  >
+    This is the message
+  </div>
+  <div
+    className="confirmation-modal__buttons"
+  >
+    <div
+      className="confirmation-modal__button"
+      onClick={[Function]}
+    >
+      Yes
+    </div>
+    <div
+      className="confirmation-modal__button"
+      onClick={[Function]}
+    >
+      No
+    </div>
+  </div>
+</div>
+`;

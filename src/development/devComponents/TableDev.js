@@ -3,8 +3,8 @@ import DevSection from './DevSection';
 import Table from '../../components/table/Table';
 
 const testTableData = {
-  I: 'am',
-  a: 'donut'
+  'key_one': 'value_one',
+  'key_two': 'value_two',
 };
 
 const testTableConfig = {

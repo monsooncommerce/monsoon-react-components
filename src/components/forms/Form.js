@@ -1,5 +1,10 @@
 import React from 'react';
+import merge from 'deepmerge';
+import clone from 'clone';
+
 import Input from './Input';
+import Button from './Button';
+import Icon from './icon/Icon';
 
 class Form extends React.Component {
   constructor(props) {
@@ -28,7 +33,7 @@ class Form extends React.Component {
       inputManagementState[input.name] = input;
       inputManagementState[input.name].value = input.defaultValue;
       inputManagementState[input.name].active = false;
-      inputManagementState[input.name].errors = [];
+      inputManagementState[input.name].errors = input.defaultValue ? [] : ['This field is required'];
     })
 
     this.props.buttonsConfig.forEach(button => {
@@ -38,7 +43,7 @@ class Form extends React.Component {
 
     // merge the olde state with the new input management object.
     const newState = {inputs: inputManagementState, buttons: buttonManagementState}
-    this.setState( {...this.state, inputs: inputManagementState, buttons: buttonManagementState } )
+    this.setState( merge(this.state, newState ))
   }
 
   onKeyUp(e) {
@@ -85,8 +90,6 @@ class Form extends React.Component {
   limitChar(name, value) {
     const limit = this.state.inputs[name].characterLimit;
 
-    console.log(limit, value.length >= limit)
-
     if (value.length > limit) {
       return true;
     }
@@ -106,32 +109,30 @@ class Form extends React.Component {
       return;
     }
 
-    // if (passedTest) {
-    //   const oldState = this.state;
-    //   const clonedState = clone(oldState);
-    //   clonedState.inputs[name].value = value;
-    //   const newState = merge(oldState, clonedState);
-    //   this.setState(newState);
-    // };
+    if (passedTest) {
+      const oldState = this.state;
+      const clonedState = clone(oldState);
+      clonedState.inputs[name].value = value;
+      const newState = merge(oldState, clonedState);
+      this.setState(newState);
+    }
 
-    const newInputs = {...this.state.inputs};
+    const inputs = clone(this.state.inputs);
 
-    newInputs[name].errors = [];
-    newInputs[name].value = value;
-    newInputs[name].errors = errors;
+    inputs[name].value = value;
+    inputs[name].errors = errors;
 
-    const newState = { ...this.state, inputs: newInputs };
-
-    this.setState(newState);
+    this.setState({...this.state, inputs});
   }
 
-  getInputs(inputs, submitted) {
+  getInputs(inputs, submitted, scopeClass) {
     return Object.keys(inputs).map( inputKey => {
       const input = inputs[inputKey];
 
       const label = input.label;
       const tests = input.tests;
       const active = input.active;
+      const autofocus = input.autofocus;
       const submitOnEnter = input.submitOnEnter;
       const errors = input.errors;
 
@@ -143,12 +144,13 @@ class Form extends React.Component {
       );
 
       const onKeyUp = submitOnEnter ? this.onKeyUp : () => null;
-      const errorsDisplay = submitted && input.errors.length >= 1 ? <div> <Icon type="attention"/> </div>  : null;
+      // const errorsDisplay = submitted && input.errors.length >= 1 ? <div> <Icon type="attention"/> </div>  : null;
+      const errorsDisplay = null;
 
-      console.log(input.errors, this.state)
+      // console.log(input.errors, this.state);
 
       return (
-        <div className={`form__input-container`}>
+        <div key={`input-${input.id}`} className={`form__input-container`}>
           { labelDisplay }
           <div className={`form__input-wrapper`} >
             <Input
@@ -158,6 +160,7 @@ class Form extends React.Component {
               suffix={input.suffix}
               onKeyUp={onKeyUp}
               active={active}
+              autofocus={autofocus}
               placeholder={input.placeholder}
               ref={ (input) => this[inputKey] = input }
               onChange={this.onChange}
@@ -171,12 +174,20 @@ class Form extends React.Component {
     })
   }
 
-  getButtons(buttons, ) {
-    // return Object.keys(buttons).map( buttonKey => {
-    //   const button = buttons[buttonKey];
-    //   const action = button.action === 'submit' ? this.onSubmit : button.action;
-    //   return <Button label={button.label} onClick={action}/>
-    // });
+  getButtons(buttons, scopeClass) {
+
+    return Object.keys(buttons).map( buttonKey => {
+      const button = buttons[buttonKey];
+      const { label, type } = button;
+      const action = button.action === 'submit' ? this.onSubmit : button.action;
+
+      return <Button
+        key={`${button.label}-button`}
+        label={label}
+        type={type}
+        onClick={action}
+      />;
+    });
   }
 
   getOutput() {
@@ -195,7 +206,7 @@ class Form extends React.Component {
 
       // put the input holder object into the form holder object
       formExportObject[input.name] = inputExportObject;
-    })
+    });
 
     return formExportObject;
   }
@@ -204,7 +215,6 @@ class Form extends React.Component {
     let errors = false;
     const state = this.state;
     const stateInputs = state.inputs;
-    const output = this.getOutput();
 
     Object.keys(stateInputs).forEach(inputKey => {
       const input = stateInputs[inputKey];
@@ -214,21 +224,23 @@ class Form extends React.Component {
     });
 
     if (errors) {
-      this.setState({...this.state, submitted: true})
-      return null
+      this.setState(merge(state, {submitted: true}));
+      return null;
     }
 
+    this.setState(merge(state, {submitted: true}));
 
+    const output = this.getOutput();
     this.props.onSubmit(output);
-    this.setState({...this.state, submitted: true})
   }
 
   render() {
     const submitted = this.state.submitted;
     const inputs = this.state.inputs;
     const buttons = this.state.buttons;
-    const inputsDisplay = this.getInputs(inputs, submitted);
-    const buttonsDisplay = this.getButtons(buttons);
+    const scopeClass = `${this.props.scopeClass}____form`;
+    const inputsDisplay = this.getInputs(inputs, submitted, scopeClass);
+    const buttonsDisplay = this.getButtons(buttons, scopeClass);
 
     return(
       <div className={`form`}>
@@ -239,13 +251,13 @@ class Form extends React.Component {
           { buttonsDisplay }
         </div>
       </div>
-    )
+    );
   }
 }
 
 Form.defaultProps = {
+  scopeClass: 'default',
   buttonsConfig: [],
-  inputConfig: [],
-}
+};
 
 export default Form;

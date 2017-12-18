@@ -1,2 +1,30 @@
 @import 'devComponents/styles/iconDev';
 @import 'devComponents/styles/devSection';
+
+$padding-small: 4px;
+$margin-small: 4px;
+$default-font-color: #333;
+
+.dev-container {
+  display: flex;
+  min-height: 100vh;
+  &__sidebar {
+    border: solid;
+    display: inline-block;
+  }
+
+  &__link {
+    padding: $padding-small;
+    margin: $margin-small;
+    a {
+      color: $default-font-color;
+      text-decoration: none;
+    }
+  }
+
+  &__display-view {
+    border: solid;
+    display: inline-block;
+    width: 100%;
+  }
+}

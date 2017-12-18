@@ -7,7 +7,6 @@ class Table extends React.Component {
 
   getRows(dataObject, scopeClass) {
     return Object.keys(dataObject).map((key, i) => {
-      console.log(key, i)
       return (
         <div className={`table__row `} key={`table-row-${i}`}>
           <div className={`table__cell key`}>{ this.props.config.keyFormatter(key) }</div>
@@ -18,7 +17,6 @@ class Table extends React.Component {
   }
 
   getValue(value) {
-
     try {
       if ( value && typeof value === 'object') {
         return value.component;
@@ -34,7 +32,6 @@ class Table extends React.Component {
     const scopeClass = this.props.scopeClass;
     const data = this.props.data;
     const rows = this.getRows(data, scopeClass);
-console.log(data)
 
     return (
       <div className={`table`} key={`I love cows`}>
