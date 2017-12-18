@@ -9,7 +9,7 @@ $default-font-color: #333;
   display: flex;
   min-height: 100vh;
   &__sidebar {
-    border: solid;
+    // border: solid;
     display: inline-block;
   }
 
@@ -23,7 +23,7 @@ $default-font-color: #333;
   }
 
   &__display-view {
-    border: solid;
+    // border: solid;
     display: inline-block;
     width: 100%;
   }

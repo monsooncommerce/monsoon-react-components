@@ -1,6 +1,9 @@
 import React from 'react';
 import DevSection from './DevSection';
 import Button from '../../components/buttons/Button';
+import buttonGuide from '../../components/buttons/guide.md';
+import MarkdownRenderer from 'react-markdown-renderer';
+
 
 class Buttons extends React.Component {
   constructor(props) {
@@ -20,6 +23,8 @@ class Buttons extends React.Component {
           <Button type="icon" icon="trends"/>
           <Button type="icon" icon="watchlist"/>
         </DevSection>
+
+        <MarkdownRenderer markdown={buttonGuide} />
       </div>
 
     );

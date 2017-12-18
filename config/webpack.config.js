@@ -4,7 +4,9 @@ const merge = require('webpack-merge');
 
 const commonConfig = merge([
   parts.loadJavascript(),
-  parts.loadStyles()
+  parts.loadStyles(),
+  // parts.loadMarkdown(),
+  parts.loadRaw(),
 ]);
 
 const developmentConfig = merge([
@@ -24,7 +26,8 @@ const developmentConfig = merge([
     port: process.env.PORT,
   }),
 
-  parts.HtmlWebpackPlugin()
+  parts.HtmlWebpackPlugin(),
+  // parts.loadMarkdown(),
 ]);
 
 const productionConfig = merge([{

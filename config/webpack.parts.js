@@ -17,6 +17,40 @@ exports.loadJavascript = ({include, exclude} = {}) => ({
   },
 });
 
+// exports.loadMarkdown = ({include, exclude} = {}) => ({
+//   module: {
+//     rules: [
+//       {
+//         test: /\.md$/,
+//         include,
+//         exclude,
+//         use: [
+//           {
+//             loader: "html-loader"
+//           },
+//           {
+//             loader: "markdown-loader",
+//             options: {
+//             }
+//           }
+//         ],
+//       }
+//     ]
+//   }
+// });
+
+exports.loadRaw = ({include, exclude} = {}) => ({
+  module: {
+      rules: [
+        {
+          test: /\.md$/,
+          include,
+          exclude,
+          use: 'raw-loader'
+        }
+      ]
+    }
+});
 
 // STYLES
 
