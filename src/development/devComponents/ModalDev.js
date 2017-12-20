@@ -20,12 +20,12 @@ class ModalDev extends React.Component {
   render() {
     return(
       <div>
-        <DevSection className='modal-dev' label="Modal Dev">
+        <DevSection className='modal-dev' label="Modal">
           <Modal open='true'>
             <div> I am in a modal! </div>
           </Modal>
         </DevSection>
-        <DevSection className='modal-dev' label="Modal Dev">
+        <DevSection className='modal-dev' label="Confirmation Modal">
           <ConfirmationModal
             open={this.state.confirmationModalOpen}
             onConfirm={this.confirmationModalClose}

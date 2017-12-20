@@ -18,7 +18,9 @@ class PlaceholdersDev extends React.Component {
           <ImagePlaceholder />
         </DevSection>
 
-        <MarkdownRenderer markdown={guide} />
+        <div className="guide">
+          <MarkdownRenderer markdown={guide} />
+        </div>
       </div>
 
     );
