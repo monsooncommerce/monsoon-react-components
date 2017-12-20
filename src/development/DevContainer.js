@@ -27,6 +27,10 @@ const sectionLinksData = [
     path: 'modal',
     label: 'Modal',
   },
+  {
+    path: 'placeholders',
+    label: 'Placeholders',
+  },
 ];
 
 class DevContainer extends React.Component {
@@ -55,6 +59,7 @@ class DevContainer extends React.Component {
           <Route path="/loadingIndicator" component={devComponents.LoadingIndicatorDev}/>
           <Route path="/table" component={devComponents.TableDev}/>
           <Route path="/modal" component={devComponents.ModalDev}/>
+          <Route path="/placeholders" component={devComponents.PlaceholdersDev}/>
         </div>
       </div>
 

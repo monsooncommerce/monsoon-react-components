@@ -22,7 +22,7 @@ class IconDev extends React.Component {
     const allIcons = this.displayAllIcons(iconSvgBank);
 
     return(
-      <DevSection>
+      <DevSection label="Icons">
         <div className="icon-rows">
           { allIcons }
         </div>

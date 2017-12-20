@@ -1,0 +1,23 @@
+.image-placeholder {
+  border: solid;
+  border-color: $dark-grey;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 150px;
+  height: 150px;
+
+   &__label {
+     width: 100%;
+     color: $dark-grey;
+     text-align: center;
+   }
+
+  svg {
+    width: 50%;
+    height: 50%;
+    fill: $dark-grey;
+  }
+}

@@ -10,7 +10,7 @@ class LoadingIndicatorDev extends React.Component {
   render() {
     return(
       <div>
-        <DevSection label="Laoding Indicator">
+        <DevSection label="Loading Indicator">
           <LoadingIndicator />
         </DevSection>
       </div>

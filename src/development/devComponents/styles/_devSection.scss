@@ -1,10 +1,31 @@
 .dev-section {
-  background: whitesmoke;
+  // background: whitesmoke;
+  border: 1px solid $dark-grey;
+  border-radius: $border-radius;
   padding: 15px;
   margin: 20px;
   display: flex;
   justify-content: center;
   position: relative;
+  flex-wrap: wrap;
+
+  &__label-wrapper {
+    width: 100%;
+    display: flex;
+    // justify-content: center;
+    margin-bottom: 20px;
+    height: 40px;
+  }
+  &__label-text {
+    border-radius: $border-radius;
+    padding: 10px;
+    background: #ccc;
+    // width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+  }
 }
 
 .modal-dev {

@@ -20,7 +20,7 @@ class TableDev extends React.Component {
   render() {
     return(
       <div>
-        <DevSection label="Table Indicator">
+        <DevSection label="Table">
           <Table
             data={testTableData}
             config={testTableConfig}

@@ -4,9 +4,11 @@ import LoadingIndicatorDev from './LoadingIndicatorDev';
 import TableDev from './TableDev';
 import ModalDev from './ModalDev';
 import Home from './Home';
+import PlaceholdersDev from './PlaceholdersDev';
 
 export default {
   LoadingIndicatorDev,
+  PlaceholdersDev,
   ButtonsDev,
   IconDev,
   ModalDev,

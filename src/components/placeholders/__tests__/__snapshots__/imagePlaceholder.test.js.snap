@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When all props are valid 1`] = `
+<div
+  className="image-placeholder"
+>
+  <div
+    className="icon-wrapper"
+  >
+    <svg
+      style={
+        Object {
+          "height": undefined,
+          "overflow": "hidden",
+        }
+      }
+      version="1.1"
+      viewBox="0 0 1024 896"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g>
+        <path
+          d="M1024,576V896H0V704L192,512,320,640,704,256ZM192,384q-80,0-136-56T0,192Q0,112,56,56T192,0q80,0,136,56t56,136q0,80-56,136T192,384Z"
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className="image-placeholder__label"
+  >
+    Image Not Available
+  </div>
+</div>
+`;
