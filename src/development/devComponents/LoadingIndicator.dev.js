@@ -1,5 +1,5 @@
 import React from 'react';
-import DevSection from './DevSection';
+import DevSection from './DisplaySection.dev';
 import LoadingIndicator from '../../components/loadingIndicator/LoadingIndicator';
 
 class LoadingIndicatorDev extends React.Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import DevSection from './DevSection';
+import DevSection from './DisplaySection.dev';
 import Modal from '../../components/modal/Modal';
 import ConfirmationModal from '../../components/confirmationModal/ConfirmationModal';
 

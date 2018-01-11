@@ -2,36 +2,7 @@ import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import devComponents from './devComponents';
 
-const sectionLinksData = [
-  {
-    path: '',
-    label: 'Home',
-  },
-  {
-    path: 'buttons',
-    label: 'Buttons',
-  },
-  {
-    path: 'icons',
-    label: 'Icons',
-  },
-  {
-    path: 'loadingIndicator',
-    label: 'LoadingIndicator',
-  },
-  {
-    path: 'table',
-    label: 'Table',
-  },
-  {
-    path: 'modal',
-    label: 'Modal',
-  },
-  {
-    path: 'placeholders',
-    label: 'Placeholders',
-  },
-];
+import manifest from './helpers/componentManifest';
 
 class DevContainer extends React.Component {
   constructor(props) {
@@ -39,13 +10,22 @@ class DevContainer extends React.Component {
   }
 
   getLinks(sectionLinks) {
-    return sectionLinks.map(link => {
-      return <div className='dev-container__link'><Link to={`/${link.path}`}>{link.label}</Link></div>;
+    return Object.keys(devComponents).map(key => {
+      if ((!(key === 'DisplaySectionDev') && !(key === 'HomeDev'))) {
+        return <div className='dev-container__link'><Link to={`/${key.toLowerCase()}`}>{key.replace('Dev','')}</Link></div>;
+      }
+    });
+  }
+
+  makeRoutes(sectionLinks) {
+    return Object.keys(devComponents).map(key => {
+      return <Route exact path={`/${key}`} component={devComponents[`${key}`]}/>;
     });
   }
 
   render() {
-    const sectionLinks = this.getLinks(sectionLinksData);
+    const sectionLinks = this.getLinks(manifest);
+    const sectionRoutes = this.makeRoutes(manifest);
     return (
       <div className="dev-container">
         <div className="dev-container__sidebar">
@@ -53,13 +33,7 @@ class DevContainer extends React.Component {
         </div>
 
         <div className="dev-container__display-view">
-          <Route exact path="/" component={devComponents.Home}/>
-          <Route path="/buttons" component={devComponents.ButtonsDev}/>
-          <Route path="/icons" component={devComponents.IconDev}/>
-          <Route path="/loadingIndicator" component={devComponents.LoadingIndicatorDev}/>
-          <Route path="/table" component={devComponents.TableDev}/>
-          <Route path="/modal" component={devComponents.ModalDev}/>
-          <Route path="/placeholders" component={devComponents.PlaceholdersDev}/>
+          {sectionRoutes}
         </div>
       </div>
 

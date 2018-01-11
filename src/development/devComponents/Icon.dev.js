@@ -1,6 +1,9 @@
 import React from 'react';
-import DevSection from './DevSection';
+import DevSection from './DisplaySection.dev';
 import Icon, { iconSvgBank } from '../../components/icons';
+
+import iconGuide from '../../components/icons/guide.md';
+import MarkdownRenderer from 'react-markdown-renderer';
 
 class IconDev extends React.Component {
   constructor(props) {
@@ -22,11 +25,14 @@ class IconDev extends React.Component {
     const allIcons = this.displayAllIcons(iconSvgBank);
 
     return(
-      <DevSection label="Icons">
-        <div className="icon-rows">
+      <div>
+        <DevSection label="Icons">
+          <div className="icon-rows">
           { allIcons }
-        </div>
-      </DevSection>
+          </div>
+        </DevSection>
+        <MarkdownRenderer markdown={iconGuide} />
+      </div>
     );
   }
 }

@@ -1,17 +1,19 @@
-import ButtonsDev from './ButtonsDev';
-import IconDev from './IconDev';
-import LoadingIndicatorDev from './LoadingIndicatorDev';
-import TableDev from './TableDev';
-import ModalDev from './ModalDev';
-import Home from './Home';
-import PlaceholdersDev from './PlaceholdersDev';
+import ButtonsDev from './Buttons.dev';
+import IconDev from './Icon.dev';
+import LoadingIndicatorDev from './LoadingIndicator.dev';
+import TableDev from './Table.dev';
+import ModalDev from './Modal.dev';
+import HomeDev from './Home.dev';
+import PlaceholdersDev from './Placeholders.dev';
 
-export default {
-  LoadingIndicatorDev,
-  PlaceholdersDev,
-  ButtonsDev,
-  IconDev,
-  ModalDev,
-  TableDev,
-  Home,
-};
+const components = {};
+const allComponents = require.context('./', false, /dev.js$/);
+
+allComponents.keys().forEach((key) => {
+  const name = key.replace('./','').replace('.dev', '').replace('.js','') + 'Dev';
+  if (!components[name]) {
+    components[name] = allComponents(key).default;
+  }
+});
+
+export default components;

@@ -779,6 +779,34 @@ var bank = {
       null,
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { d: 'M522 883q-74-162-74-371h-256v96q0 78 94.5 162t235.5 113zm1078-275v-96h-256q0 209-74 371 141-29 235.5-113t94.5-162zm128-128v128q0 71-41.5 143t-112 130-173 97.5-215.5 44.5q-42 54-95 95-38 34-52.5 72.5t-14.5 89.5q0 54 30.5 91t97.5 37q75 0 133.5 45.5t58.5 114.5v64q0 14-9 23t-23 9h-832q-14 0-23-9t-9-23v-64q0-69 58.5-114.5t133.5-45.5q67 0 97.5-37t30.5-91q0-51-14.5-89.5t-52.5-72.5q-53-41-95-95-113-5-215.5-44.5t-173-97.5-112-130-41.5-143v-128q0-40 28-68t68-28h288v-96q0-66 47-113t113-47h576q66 0 113 47t47 113v96h288q40 0 68 28t28 68z' })
     )
+  },
+
+  loading: {
+    viewBox: '0 0 40 40',
+    svg: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'g',
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { opacity: '0.2', d: 'M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z' }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'path',
+        { d: 'M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0C22.32,8.481,24.301,9.057,26.013,10.047z' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('animateTransform', { attributeType: 'xml',
+          attributeName: 'transform',
+          type: 'rotate',
+          from: '0 20 20',
+          to: '360 20 20',
+          dur: '0.5s',
+          repeatCount: 'indefinite' })
+      )
+    )
+  },
+  image: {
+    viewBox: '0 0 1024 896',
+    svg: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'g',
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { d: 'M1024,576V896H0V704L192,512,320,640,704,256ZM192,384q-80,0-136-56T0,192Q0,112,56,56T192,0q80,0,136,56t56,136q0,80-56,136T192,384Z' })
+    )
   }
 };
 

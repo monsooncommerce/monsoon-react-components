@@ -6,11 +6,11 @@
 ```
 
 ### Props
-  - #### Icon
-    - A string that the component uses to figure out button to render.
+  - ##### Type
+    - A string that the component uses to figure out which button to render.
     - Options include:
       - icon
       - default
 
-  - #### Type
+  - ##### Icon
     - For Icon buttons this will determine the icon in the button.

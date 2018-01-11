@@ -1,5 +1,5 @@
 import React from 'react';
-import DevSection from './DevSection';
+import DevSection from './DisplaySection.dev';
 import MarkdownRenderer from 'react-markdown-renderer';
 import instuctions from './home.md';
 

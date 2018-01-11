@@ -1,5 +1,5 @@
 import React from 'react';
-import DevSection from './DevSection';
+import DevSection from './DisplaySection.dev';
 import Table from '../../components/table/Table';
 
 const testTableData = {
