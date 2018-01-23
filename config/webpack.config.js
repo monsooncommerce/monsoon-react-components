@@ -4,7 +4,6 @@ const merge = require('webpack-merge');
 
 const commonConfig = merge([
   parts.loadJavascript(),
-  parts.loadStyles(),
   // parts.loadMarkdown(),
   parts.loadRaw(),
 ]);
@@ -21,6 +20,7 @@ const developmentConfig = merge([
     plugins: [],
   },
 
+  parts.loadStyles(),
   parts.devServer({
     host: process.env.HOST,
     port: process.env.PORT,
@@ -30,16 +30,18 @@ const developmentConfig = merge([
   // parts.loadMarkdown(),
 ]);
 
-const productionConfig = merge([{
-  entry: {
-    main: PATHS.prod,
+const productionConfig = merge([
+  {
+    entry: {
+      main: PATHS.prod,
+    },
+    output: {
+      path: PATHS.build,
+      filename: 'index.js',
+      libraryTarget: 'commonjs2'
+    },
   },
-  output: {
-    path: PATHS.build,
-    filename: 'index.js',
-    libraryTarget: 'commonjs2'
-  },
-}]);
+]);
 
 module.exports = (env) => {
   if (env === 'production') {

@@ -1,6 +1,6 @@
 {
   "name": "@monsoon_inc/monsoon-components",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "This is a test",
   "main": "build/index.js",
   "peerDependencies": {

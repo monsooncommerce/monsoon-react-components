@@ -3,7 +3,7 @@
 ### Import
 
 ```
-import { ImagePlaceholder } from 'monsoon-component-library';
+import { ImagePlaceholder } from '@monsoon_inc/component-library';
 ```
 &nbsp;
 

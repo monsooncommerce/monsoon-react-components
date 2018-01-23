@@ -1,9 +1,12 @@
 import React from 'react';
 import DevSection from './DisplaySection.dev';
 import Table from '../../components/table/Table';
+import tableGuide from '../../components/table/guide.md';
+
+import MarkdownRenderer from 'react-markdown-renderer';
 
 const testTableData = {
-  'key_one': 'value_one',
+  'Key_one': 'value_one',
   'key_two': 'value_two',
 };
 
@@ -26,6 +29,7 @@ class TableDev extends React.Component {
             config={testTableConfig}
           />
         </DevSection>
+        <MarkdownRenderer markdown={tableGuide} />
       </div>
     );
   }

@@ -1,3 +1,8 @@
+### Import
+
+```
+import { Button } from '@monsoon_inc/component-library';
+```
 
 # Buttons
 

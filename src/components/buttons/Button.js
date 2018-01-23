@@ -9,7 +9,7 @@ class Button extends React.Component {
   getDefaultButton(label, onClick) {
     return (
       <div className={`button default-button`} onClick={ onClick }>
-        { label }
+        { label }?
       </div>
     );
   }

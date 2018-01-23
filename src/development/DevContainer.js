@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import devComponents from './devComponents';
+import realComponents from '../components';
 
 import manifest from './helpers/componentManifest';
+
+console.log(realComponents);
 
 class DevContainer extends React.Component {
   constructor(props) {
@@ -10,11 +13,15 @@ class DevContainer extends React.Component {
   }
 
   getLinks(sectionLinks) {
-    return Object.keys(devComponents).map(key => {
+    const links = Object.keys(devComponents).map(key => {
       if ((!(key === 'DisplaySectionDev') && !(key === 'HomeDev'))) {
         return <div className='dev-container__link'><Link to={`/${key.toLowerCase()}`}>{key.replace('Dev','')}</Link></div>;
       }
     });
+    links.unshift(
+      <div className='dev-container__link'><Link to={`/homeDev`}>Home</Link></div>
+    );
+    return links;
   }
 
   makeRoutes(sectionLinks) {

@@ -9,21 +9,12 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log('foo', instuctions);
     return(
-
       <div>
-
         <div>
-
         </div>
-
-
-
-
         <MarkdownRenderer markdown={instuctions} />
       </div>
-
     );
   }
 }
