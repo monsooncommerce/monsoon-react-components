@@ -17,11 +17,11 @@ const questions = [
 const writeTemplate = (compName, dirName) => {
   return `import React from 'react';
 import DevSection from './DisplaySection.dev';
-// import ${compName} from '../../components/buttons/${compName}';
-// import ${compName}Guide from '../../components/${dirName}/guide.md';
+import ${compName} from '../../components/${dirName}/${compName}';
+import ${detitlize(compName)}Guide from '../../components/${dirName}/guide.md';
 import MarkdownRenderer from 'react-markdown-renderer';
 
-class ${compName} extends React.Component {
+class ${compName}Dev extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -34,14 +34,14 @@ class ${compName} extends React.Component {
           <h1>${compName}</h1>
         </DevSection>
 
-        <MarkdownRenderer markdown={'# ${compName} guide'} />
+        <MarkdownRenderer markdown={${detitlize(compName)}Guide} />
       </div>
 
     );
   }
 }
 
-export default ${compName};`;
+export default ${compName}Dev;`;
 };
 
 const guideTemplate = (compName) => {
@@ -115,7 +115,7 @@ const titlize = (word)=> {
 };
 
 const createDevComponent = function(compName) {
-  fs.writeFileSync(`./src/development/devComponents/${compName}.dev.js`, writeTemplate(compName));
+  fs.writeFileSync(`./src/development/devComponents/${compName}.dev.js`, writeTemplate(compName, dirName));
 };
 
 const createComponent = function(compName, dirName) {
