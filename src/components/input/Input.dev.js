@@ -1,7 +1,7 @@
 import React from 'react';
-import DevSection from './DisplaySection.dev';
-import Input from '../../components/input/Input';
-import InputGuide from '../../components/input/guide.md';
+import DevSection from '../../development/devComponents/DisplaySection.dev.js';
+import Input from './Input';
+import InputGuide from './guide.md';
 import MarkdownRenderer from 'react-markdown-renderer';
 
 class InputDev extends React.Component {

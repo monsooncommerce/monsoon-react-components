@@ -1,7 +1,7 @@
 import React from 'react';
-import DevSection from './DisplaySection.dev';
-import Form from '../../components/form/Form';
-import formGuide from '../../components/form/guide.md';
+import DevSection from '../../development/devComponents/DisplaySection.dev.js';
+import Form from './Form';
+import formGuide from './guide.md';
 import MarkdownRenderer from 'react-markdown-renderer';
 
 class FormDev extends React.Component {

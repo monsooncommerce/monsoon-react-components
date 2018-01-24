@@ -16,9 +16,9 @@ const questions = [
 
 const writeTemplate = (compName, dirName) => {
   return `import React from 'react';
-import DevSection from './DisplaySection.dev';
-import ${compName} from '../../components/${dirName}/${compName}';
-import ${detitlize(compName)}Guide from '../../components/${dirName}/guide.md';
+import DevSection from '../../development/devComponents/DisplaySection.dev.js';
+import ${compName} from './${compName}';
+import ${detitlize(compName)}Guide from './guide.md';
 import MarkdownRenderer from 'react-markdown-renderer';
 
 class ${compName}Dev extends React.Component {
@@ -115,16 +115,13 @@ const titlize = (word)=> {
   });
 };
 
-const createDevComponent = function(compName) {
-  fs.writeFileSync(`./src/development/devComponents/${compName}.dev.js`, writeTemplate(compName, dirName));
-};
-
 const createComponent = function(compName, dirName) {
   fs.mkdirSync(`./src/components/${dirName}`);
+  fs.writeFileSync(`./src/components/${dirName}/${compName}.dev.js`, writeTemplate(compName, dirName));
   fs.writeFileSync(`./src/components/${dirName}/${compName}.js`, componentTemplate(compName));
   fs.writeFileSync(`./src/components/${dirName}/guide.md`, guideTemplate(compName));
   fs.writeFileSync(`./src/components/${dirName}/${detitlize(compName)}.test.js`, testTemplate(compName));
-  fs.writeFileSync(`./src/components/${dirName}/_${detitlize(compName)}.scss`);
+  fs.writeFileSync(`./src/components/${dirName}/_${detitlize(compName)}.scss`, '');
 };
 
 inquirer.prompt(questions).then((answers) => {

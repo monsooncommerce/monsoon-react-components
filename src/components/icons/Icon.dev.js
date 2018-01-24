@@ -1,8 +1,9 @@
 import React from 'react';
-import DevSection from './DisplaySection.dev';
-import Icon, { iconSvgBank } from '../../components/icons';
+import DevSection from '../../development/devComponents/DisplaySection.dev.js';
+import Icon from './Icon';
+import iconSvgBank from './iconSvgBank';
 
-import iconGuide from '../../components/icons/guide.md';
+import iconGuide from './guide.md';
 import MarkdownRenderer from 'react-markdown-renderer';
 
 class IconDev extends React.Component {

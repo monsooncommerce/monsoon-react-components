@@ -1,7 +1,7 @@
 import React from 'react';
-import DevSection from './DisplaySection.dev';
-import Button from '../../components/buttons/Button';
-import buttonGuide from '../../components/buttons/guide.md';
+import DevSection from '../../development/devComponents/DisplaySection.dev.js';
+import Button from './Button';
+import buttonGuide from './guide.md';
 import MarkdownRenderer from 'react-markdown-renderer';
 
 

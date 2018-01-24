@@ -1,8 +1,8 @@
 import React from 'react';
-import DevSection from './DisplaySection.dev';
-import Modal from '../../components/modal/Modal';
-import ConfirmationModal from '../../components/confirmationModal/ConfirmationModal';
-import modalGuide from '../../components/modal/guide.md';
+import DevSection from '../../development/devComponents/DisplaySection.dev.js';
+import Modal from './modal/Modal';
+import ConfirmationModal from './confirmationModal/ConfirmationModal';
+import modalGuide from './guide.md';
 
 import MarkdownRenderer from 'react-markdown-renderer';
 
@@ -38,7 +38,7 @@ class ModalDev extends React.Component {
             message={'Are you sure you want to close the Confirmation Modal'}
           />
         </DevSection>
-        
+
         <MarkdownRenderer markdown={modalGuide} />
       </div>
     );

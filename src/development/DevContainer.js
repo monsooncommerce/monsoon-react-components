@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import devComponents from './devComponents';
-import realComponents from '../components';
+import realComponents, { devComponents as foo} from '../components';
 
 class DevContainer extends React.Component {
   constructor(props) {
@@ -9,16 +9,17 @@ class DevContainer extends React.Component {
   }
 
   getLinks() {
-    return Object.keys(devComponents).map(key => {
+    return Object.keys(foo).map(key => {
       if ((!(key === 'DisplaySectionDev') && !(key === 'HomeDev'))) {
+        console.log(key)
         return <div className='dev-container__link'><Link to={`/${key.toLowerCase()}`}>{key.replace('Dev','')}</Link></div>;
       }
     });
   }
 
   makeRoutes() {
-    return Object.keys(devComponents).map(key => {
-        return <Route exact path={`/${key}`} component={devComponents[`${key}`]}/>;
+    return Object.keys(foo).map(key => {
+        return <Route exact path={`/${key}`} component={foo[`${key}`]}/>;
     });
   }
 

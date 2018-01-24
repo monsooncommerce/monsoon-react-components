@@ -1,9 +1,8 @@
 import React from 'react';
-import DevSection from './DisplaySection.dev';
-import ImagePlaceholder from '../../components/placeholders';
-import guide from '../../components/placeholders/guide.md';
+import DevSection from '../../development/devComponents/DisplaySection.dev.js';
+import ImagePlaceholder from './ImagePlaceholder';
+import guide from './guide.md';
 import MarkdownRenderer from 'react-markdown-renderer';
-
 
 class PlaceholdersDev extends React.Component {
   constructor(props) {

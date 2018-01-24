@@ -1,7 +1,8 @@
 import React from 'react';
-import DevSection from './DisplaySection.dev';
-import Table from '../../components/table/Table';
-import tableGuide from '../../components/table/guide.md';
+import DevSection from '../../development/devComponents/DisplaySection.dev.js';
+
+import Table from './Table';
+import tableGuide from './guide.md';
 
 import MarkdownRenderer from 'react-markdown-renderer';
 

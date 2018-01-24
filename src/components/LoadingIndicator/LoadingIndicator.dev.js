@@ -1,6 +1,6 @@
 import React from 'react';
-import DevSection from './DisplaySection.dev';
-import LoadingIndicator from '../../components/loadingIndicator/LoadingIndicator';
+import DevSection from '../../development/devComponents/DisplaySection.dev.js';
+import LoadingIndicator from './LoadingIndicator';
 
 class LoadingIndicatorDev extends React.Component {
   constructor(props) {
