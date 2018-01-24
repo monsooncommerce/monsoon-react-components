@@ -33,8 +33,9 @@ class ${compName}Dev extends React.Component {
         <DevSection label="Default ${compName}">
           <h1>${compName}</h1>
         </DevSection>
-
-        <MarkdownRenderer markdown={${detitlize(compName)}Guide} />
+        <div className="markdown-body">
+          <MarkdownRenderer markdown={${detitlize(compName)}Guide} />
+        </div>
       </div>
 
     );

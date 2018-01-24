@@ -60,7 +60,9 @@ class FormDev extends React.Component {
           <Form inputsConfig={inputsConfig} buttonsConfig={buttonsConfig} onSubmit={this.onSubmit} />
         </DevSection>
 
-        <MarkdownRenderer markdown={formGuide} />
+        <div className="markdown-body">
+          <MarkdownRenderer markdown={formGuide} />
+        </div>
       </div>
 
     );
