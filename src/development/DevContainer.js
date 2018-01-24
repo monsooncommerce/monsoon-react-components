@@ -3,45 +3,41 @@ import { Link, Route } from 'react-router-dom';
 import devComponents from './devComponents';
 import realComponents from '../components';
 
-import manifest from './helpers/componentManifest';
-
-console.log(realComponents);
-
 class DevContainer extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  getLinks(sectionLinks) {
-    const links = Object.keys(devComponents).map(key => {
+  getLinks() {
+    return Object.keys(devComponents).map(key => {
       if ((!(key === 'DisplaySectionDev') && !(key === 'HomeDev'))) {
         return <div className='dev-container__link'><Link to={`/${key.toLowerCase()}`}>{key.replace('Dev','')}</Link></div>;
       }
     });
-    links.unshift(
-      <div className='dev-container__link'><Link to={`/homeDev`}>Home</Link></div>
-    );
-    return links;
   }
 
-  makeRoutes(sectionLinks) {
+  makeRoutes() {
     return Object.keys(devComponents).map(key => {
-      return <Route exact path={`/${key}`} component={devComponents[`${key}`]}/>;
+        return <Route exact path={`/${key}`} component={devComponents[`${key}`]}/>;
     });
   }
 
   render() {
-    const sectionLinks = this.getLinks(manifest);
-    const sectionRoutes = this.makeRoutes(manifest);
+    const sectionLinks = this.getLinks();
+    const sectionRoutes = this.makeRoutes();
     return (
       <div className="dev-container">
+
         <div className="dev-container__sidebar">
-            {sectionLinks}
+          <div className='dev-container__link'><Link to={`/`}>Home</Link></div>
+          {sectionLinks}
         </div>
 
         <div className="dev-container__display-view">
+          <Route exact path={`/`} component={devComponents[`HomeDev`]} />
           {sectionRoutes}
         </div>
+
       </div>
 
     );

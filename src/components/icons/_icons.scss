@@ -1,5 +1,7 @@
 .icon-wrapper {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   svg {
     width: 40px;
     height: 40px;

@@ -29,6 +29,7 @@
     background: white;
     margin: 0px;
     margin-left: 10px;
+    @include interactable;
 
     svg {
       width: 20px;

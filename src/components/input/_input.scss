@@ -1,1 +1,57 @@
-undefined
+.input {
+  border: 2px solid $border-color;
+  border-radius: $border-radius;
+  padding-left: 4px;
+  padding-right: 4px;
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background: white;
+  overflow: hidden;
+  @include interactable;
+
+  &.active {
+    border: 2px solid $active-input;
+    // outline: -webkit-focus-ring-color auto 5px;
+  }
+
+  &__input-carriage {
+    display: flex;
+  }
+
+  &__suffix {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    border: none;
+    // width: 35px;
+    // text-align: right;
+    border-radius: 5px;
+    font-size: 1rem;
+    min-width: 1px;
+    &::-ms-clear {
+      width : 0;
+      height: 0;
+    }
+
+    &:active, &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .input {
+    &__suffix {
+      display: flex;
+      align-items: center;
+      margin-left: 1px;
+      margin-right: 8px;
+    }
+  }
+}

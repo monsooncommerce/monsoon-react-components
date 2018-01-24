@@ -21,6 +21,26 @@ class FormDev extends React.Component {
           optional: false,
           submitOnEnter: true,
           tests: [],
+        },
+        {
+          name: 'email',
+          defaultValue: '',
+          suffix: '',
+          placeholder: 'email',
+          characterLimit: 10,
+          optional: false,
+          submitOnEnter: true,
+          tests: [],
+        },
+        {
+          name: 'name',
+          defaultValue: '',
+          suffix: '',
+          placeholder: 'name',
+          characterLimit: 10,
+          optional: false,
+          submitOnEnter: true,
+          tests: [],
         }
       ];
 
