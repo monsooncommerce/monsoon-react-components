@@ -1,6 +1,5 @@
 import React from 'react';
 import DevSection from '../../development/devComponents/DisplaySection.dev.js';
-
 import Table from './Table';
 import tableGuide from './guide.md';
 
@@ -30,7 +29,9 @@ class TableDev extends React.Component {
             config={testTableConfig}
           />
         </DevSection>
-        <MarkdownRenderer markdown={tableGuide} />
+        <div className="markdown-body">
+          <MarkdownRenderer markdown={tableGuide} />
+        </div>
       </div>
     );
   }

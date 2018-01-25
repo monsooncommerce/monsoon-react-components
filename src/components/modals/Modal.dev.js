@@ -24,13 +24,13 @@ class ModalDev extends React.Component {
     return(
       <div>
 
-        <DevSection className='modal-dev' label="Modal">
+        <DevSection key="default" className='modal-dev' label="Modal">
           <Modal open='true'>
             <div> I am in a modal! </div>
           </Modal>
         </DevSection>
 
-        <DevSection className='modal-dev' label="Confirmation Modal">
+        <DevSection key="confirmation" className='modal-dev' label="Confirmation Modal">
           <ConfirmationModal
             open={this.state.confirmationModalOpen}
             onConfirm={this.confirmationModalClose}
@@ -38,8 +38,9 @@ class ModalDev extends React.Component {
             message={'Are you sure you want to close the Confirmation Modal'}
           />
         </DevSection>
-
-        <MarkdownRenderer markdown={modalGuide} />
+        <div className="markdown-body">
+          <MarkdownRenderer markdown={modalGuide} />
+        </div>
       </div>
     );
   }

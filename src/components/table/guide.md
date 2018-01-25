@@ -3,7 +3,7 @@
 ### Import
 
 ```
-import { Table } from '@monsoon_inc/component-library';
+import { Table } from '@monsoon_inc/monsoon-components';
 ```
 &nbsp;
 

@@ -11,15 +11,14 @@ class DevContainer extends React.Component {
   getLinks() {
     return Object.keys(foo).map(key => {
       if ((!(key === 'DisplaySectionDev') && !(key === 'HomeDev'))) {
-        console.log(key)
-        return <div className='dev-container__link'><Link to={`/${key.toLowerCase()}`}>{key.replace('Dev','')}</Link></div>;
+        return <div key={`${key}-link`} className='dev-container__link'><Link to={`/${key.toLowerCase()}`}>{key.replace('Dev','')}</Link></div>;
       }
     });
   }
 
   makeRoutes() {
     return Object.keys(foo).map(key => {
-        return <Route exact path={`/${key}`} component={foo[`${key}`]}/>;
+        return <Route key={`${key}-route`} exact path={`/${key}`} component={foo[`${key}`]}/>;
     });
   }
 

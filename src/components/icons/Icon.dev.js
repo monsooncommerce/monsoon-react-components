@@ -32,7 +32,9 @@ class IconDev extends React.Component {
           { allIcons }
           </div>
         </DevSection>
-        <MarkdownRenderer markdown={iconGuide} />
+        <div className="markdown-body">
+          <MarkdownRenderer markdown={iconGuide} />
+        </div>
       </div>
     );
   }

@@ -2,12 +2,17 @@
 
 ### Import
 ```
-import { Form } from '@monsoon_inc/component-library';
+import { Form } from '@monsoon_inc/monsoon-components';
 ```
 
 
 ### Props
 ```
+export const letterTest = {
+  method:  (val) => { return val.match(/[a-zA-Z]/) ? false : true; },
+  message: 'No Letters Please'
+};
+
 const inputsConfig = [
     {
       name: 'productIdentifier',
@@ -46,7 +51,7 @@ const inputsConfig = [
     - characterLimit: <int> : the inclusive limit of characters that the input will hold
     - optional: <boolean> : if this option is set to true than the form can be submitted without any value in this input
     - submitOnEnter: <boolean> : if the user presses enter while the form is in focus than the form will submit
-    - tests: <array> : the are function that are passed the input value and return true or false to determine whether the input has errors.
+    - tests: <array> : the are objects with two function that are passed the input value and return true or false to determine whether the input has errors.
 
   - #### buttonsConfig
     - name: <string> : name of button

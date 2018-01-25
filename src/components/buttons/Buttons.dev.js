@@ -14,17 +14,18 @@ class Buttons extends React.Component {
     return(
 
       <div>
-        <DevSection label="Default Button">
+        <DevSection key="default" label="Default Button">
           <Button label="I am button"/>
         </DevSection>
-        <DevSection label="Icon Button">
+        <DevSection key="icon" label="Icon Button">
           <Button type="icon" icon="trash"/>
           <Button type="icon" icon="download"/>
           <Button type="icon" icon="trends"/>
           <Button type="icon" icon="watchlist"/>
         </DevSection>
-
-        <MarkdownRenderer markdown={buttonGuide} />
+        <div className="markdown-body">
+          <MarkdownRenderer markdown={buttonGuide} />
+        </div>
       </div>
 
     );

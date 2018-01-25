@@ -27,7 +27,8 @@
     "updatepackages": "node wipeandupdate.js && rm -rf node_modules && npm update --save-dev && npm update --save",
     "test": "node scripts/test.js --env=jsdom",
     "start": "webpack-dev-server --env development --config ./config/webpack.config.js",
-    "build": "webpack --env production --config ./config/webpack.config.js --watch"
+    "build": "webpack --env production --config ./config/webpack.config.js --watch",
+    "add-component": "node ./scaffold"
   },
   "jest": {
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec|unit))\\.jsx?$",
@@ -73,6 +74,7 @@
     "enzyme-adapter-react-15": "^1.0.5",
     "enzyme-adapter-react-16": "^1.1.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "guid": "0.0.12",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
     "inquirer": "^5.0.0",

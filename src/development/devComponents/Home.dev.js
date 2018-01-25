@@ -10,9 +10,7 @@ class Home extends React.Component {
 
   render() {
     return(
-      <div>
-        <div>
-        </div>
+      <div className="markdown-body">
         <MarkdownRenderer markdown={instuctions} />
       </div>
     );

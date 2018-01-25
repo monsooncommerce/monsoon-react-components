@@ -1,20 +1,12 @@
 # This is Monsoon Component Library
 
-1. add dev component
+### Adding a component
+1. run this command in the root directory:
+```
+npm run add-component;
+```
+1. Answer the prompts
+1. Make necessary changes by finding the generated files in './src/components' (you may have to restart the dev server...)
+1. Happy Hunting!
 
-1. add folder to components
-
-1. add js and scss files the folder
-
-
-1. first create a new compnent <nameofcomponent>Dev.js in devComponents
-
-1. import and export the new dev component in devComponents/index.js
-
-1. then update the DevContainer with a link and route to display the new component
-
-great
-
-1. now create a folder with the name of the component and put the scss and js file in it
-
-1. connect scss file to the index file in components dir
+### Ask August von Trapp or current project lead if you need help with something. Also let them know if something is funky or not working.

@@ -3,7 +3,7 @@
 ### Import
 
 ```
-import { Modal, ConfirmationModal } from '@monsoon_inc/component-library';
+import { Modal, ConfirmationModal } from '@monsoon_inc/monsoon-components';
 ```
 &nbsp;
 

@@ -46,13 +46,13 @@ export default ${compName}Dev;`;
 };
 
 const guideTemplate = (compName) => {
-  return `### Import
+  return `# ${compName}
+### Import
 \`\`\`
 import { ${compName} } from '@monsoon_inc/component-library';
 \`\`\`
 
-# Buttons
-
+### Render Example
 \`\`\`
   <${compName} />
 \`\`\`
@@ -91,12 +91,7 @@ import ${compName} from './${compName}';
 
 test('dafault modal snapshot', () => {
   const snapshot = renderer.create(
-    <${compName}
-      open={true}
-    >
-      <div> foo </div>
-      <div> bar </div>
-    </${compName}>
+    <${compName}/>
   ).toJSON();
 
   expect(snapshot).toMatchSnapshot();
@@ -116,17 +111,22 @@ const titlize = (word)=> {
 };
 
 const createComponent = function(compName, dirName) {
-  fs.mkdirSync(`./src/components/${dirName}`);
-  fs.writeFileSync(`./src/components/${dirName}/${compName}.dev.js`, writeTemplate(compName, dirName));
-  fs.writeFileSync(`./src/components/${dirName}/${compName}.js`, componentTemplate(compName));
-  fs.writeFileSync(`./src/components/${dirName}/guide.md`, guideTemplate(compName));
-  fs.writeFileSync(`./src/components/${dirName}/${detitlize(compName)}.test.js`, testTemplate(compName));
-  fs.writeFileSync(`./src/components/${dirName}/_${detitlize(compName)}.scss`, '');
+  try {
+    fs.mkdirSync(`./src/components/${dirName}`);
+    fs.writeFileSync(`./src/components/${dirName}/${compName}.dev.js`, writeTemplate(compName, dirName));
+    fs.writeFileSync(`./src/components/${dirName}/${compName}.js`, componentTemplate(compName));
+    fs.writeFileSync(`./src/components/${dirName}/guide.md`, guideTemplate(compName));
+    fs.writeFileSync(`./src/components/${dirName}/${detitlize(compName)}.test.js`, testTemplate(compName));
+    fs.writeFileSync(`./src/components/${dirName}/_${detitlize(compName)}.scss`, '');
+    fs.appendFileSync(`./src/lib/index.js`, `export const ${compName} = components.${compName};`);
+    fs.appendFileSync(`./src/components/index.scss`, `@import "${dirName}/${compName}"`);
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 inquirer.prompt(questions).then((answers) => {
   const compName = titlize(answers.compName);
   const dirName = detitlize(answers.dirName);
   createComponent(compName, dirName);
-  createDevComponent(compName);
 });

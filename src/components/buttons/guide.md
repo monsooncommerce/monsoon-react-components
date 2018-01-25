@@ -1,7 +1,7 @@
 ### Import
 
 ```
-import { Button } from '@monsoon_inc/component-library';
+import { Button } from '@monsoon_inc/monsoon-components';
 ```
 
 # Buttons

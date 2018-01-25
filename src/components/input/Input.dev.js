@@ -1,7 +1,7 @@
 import React from 'react';
 import DevSection from '../../development/devComponents/DisplaySection.dev.js';
 import Input from './Input';
-import InputGuide from './guide.md';
+import inputGuide from './guide.md';
 import MarkdownRenderer from 'react-markdown-renderer';
 
 class InputDev extends React.Component {
@@ -11,15 +11,15 @@ class InputDev extends React.Component {
 
   render() {
     return(
-
       <div>
         <DevSection label="Default Input">
           <Input />
         </DevSection>
 
-        <MarkdownRenderer markdown={'# Input guide'} />
+        <div className="markdown-body">
+          <MarkdownRenderer markdown={inputGuide} />
+        </div>
       </div>
-
     );
   }
 }
