@@ -1,17 +1,16 @@
 .form {
-  // width: 100%;
 
-  &__inputs {
-    // border: solid;
-    // height: 100%;
-  }
+
   &__buttons {
     // border: solid;
     @include interactable;
     display: flex;
     justify-content: flex-end;
+    .button {
+      margin-left: $xs-margin;
+    }
     .icon-button {
-      padding: 5px;
+      padding: $xs-margin;
       svg {
         width: 15px;
         height: 15px;
@@ -19,22 +18,27 @@
     }
   }
 
-  &__input-wrapper {
-      // border: solid;
-      // width: 30%;
-      // width: 30%;
-      // display: flex;
-      // justify-content: flex-end;
-  }
+  &__input-wrapper {}
+  &__inputs {}
 
   &__input-container {
-    // background: $light-grey;
-    // padding: 5px;
     border-radius: $border-radius;
-    // display: flex;
 
     &-errors {
+      display: flex;
+      font-size: $sm-font-size;
+      padding: $xs-padding;
+      margin-top: -$xs-padding;
+      color: $warning;
       // border: solid;
+      div {
+        display: flex;
+      }
+      svg {
+        fill: $warning;
+        height: 15px;
+        width: 15px;
+      }
     }
 
     &-label {
@@ -43,7 +47,6 @@
       align-items: center;
       margin-right: 10%;
       text-align: left;
-      // padding-top: 2px;
     }
   }
 }

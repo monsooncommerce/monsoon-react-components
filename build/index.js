@@ -1284,6 +1284,14 @@ var bank = {
       null,
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { d: 'M1024,576V896H0V704L192,512,320,640,704,256ZM192,384q-80,0-136-56T0,192Q0,112,56,56T192,0q80,0,136,56t56,136q0,80-56,136T192,384Z' })
     )
+  },
+  warning: {
+    viewBox: '0 0 1792 1792',
+    svg: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'g',
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { d: 'M1088 1248v224q0 26-19 45t-45 19h-256q-26 0-45-19t-19-45v-224q0-26 19-45t45-19h256q26 0 45 19t19 45zm30-1056l-28 768q-1 26-20.5 45t-45.5 19h-256q-26 0-45.5-19t-20.5-45l-28-768q-1-26 17.5-45t44.5-19h320q26 0 44.5 19t17.5 45z' })
+    )
   }
 };
 
@@ -1589,8 +1597,7 @@ var Button = function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'button default-button', onClick: onClick },
-        label,
-        '?'
+        label
       );
     }
   }, {
@@ -4790,7 +4797,7 @@ var Form = function (_React$Component) {
           'div',
           null,
           ' ',
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__icons_Icon__["default"], { type: 'attention' }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__icons_Icon__["default"], { type: 'warning' }),
           ' ',
           input.errors[0],
           ' '
@@ -17611,7 +17618,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = ty
 /* 111 */
 /***/ (function(module, exports) {
 
-module.exports = "# Form\n\n### Import\n```\nimport { Form } from '@monsoon_inc/monsoon-components';\n```\n\n\n### Props\n```\nexport const letterTest = {\n  method:  (val) => { return val.match(/[a-zA-Z]/) ? false : true; },\n  message: 'No Letters Please'\n};\n\nconst inputsConfig = [\n    {\n      name: 'productIdentifier',\n      defaultValue: '',\n      suffix: '',\n      placeholder: 'Enter an ASIN',\n      characterLimit: 10,\n      optional: false,\n      submitOnEnter: true,\n      tests: [],\n    }\n  ];\n\n  const buttonsConfig = [\n    {\n      name: 'submit',\n      type: 'icon',\n      label: 'submit',\n      action: 'submit'\n    },\n  ];\n\n```\n\n### Render\n```\n  <Form inputsConfig={inputsConfig} buttonsConfig={buttonsConfig} onSubmit={this.onSubmit} />\n```\n\n### Props\n  - #### inputsConfig\n    - name: <string> : name of the input\n    - defaultValue: <string> <int> <float> : the default value of the input\n    - suffix: <string> : this is appear to the right of the input\n    - placeholder: <string> : this is the placeholder of the input\n    - characterLimit: <int> : the inclusive limit of characters that the input will hold\n    - optional: <boolean> : if this option is set to true than the form can be submitted without any value in this input\n    - submitOnEnter: <boolean> : if the user presses enter while the form is in focus than the form will submit\n    - tests: <array> : the are objects with two function that are passed the input value and return true or false to determine whether the input has errors.\n\n  - #### buttonsConfig\n    - name: <string> : name of button\n    - type: <string> : type of button (see button options)\n    - label: <string> : label of the button\n    - action: <string> :\n      - submit (to submit the form)\n"
+module.exports = "# Form\n\n### Import\n```\nimport { Form } from '@monsoon_inc/monsoon-components';\n```\n\n\n### Props\n```\nexport const letterTest = {\n  method:  (val) => { return val.match(/[a-zA-Z]/) ? false : true; },\n  message: 'No Letters Please'\n};\n\nconst inputsConfig = [\n    {\n      name: 'productIdentifier',\n      defaultValue: '',\n      suffix: '',\n      placeholder: 'Enter an ASIN',\n      characterLimit: 10,\n      optional: false,\n      submitOnEnter: true,\n      tests: [],\n    }\n  ];\n\n  const buttonsConfig = [\n    {\n      name: 'submit',\n      type: 'icon',\n      label: 'submit',\n      action: 'submit'\n    },\n  ];\n\n```\n\n### Render\n```\n  <Form inputsConfig={inputsConfig} buttonsConfig={buttonsConfig} onSubmit={this.onSubmit} />\n```\n\n### Props\n  - #### inputsConfig\n    - name: <string> : name of the input\n    - defaultValue: <string> <int> <float> : the default value of the input\n    - suffix: <string> : this is appear to the right of the input\n    - placeholder: <string> : this is the placeholder of the input\n    - characterLimit: <int> : the inclusive limit of characters that the input will hold\n    - optional: <boolean> : if this option is set to true than the form can be submitted without any value in this input\n    - submitOnEnter: <boolean> : if the user presses enter while the form is in focus than the form will submit\n    - tests: <array> : the are objects with two function that are passed the input value and return true or false to determine whether the input has errors.\n\n  - #### buttonsConfig\n    - name: <string> : name of button\n    - type: <string> : type of button (see button options)\n    - label: <string> : label of the button\n    - action: <string> or <function>:\n      - functions passed in will fire when the buttons are clicked\n      - ### IMPORTANT! The internal method 'onSubmit' is not the same as the onSubmit passed in as a prop. So if you want a button to submit the form, you have to use the string 'submit' as the value of action\n"
 
 /***/ }),
 /* 112 */
@@ -17629,7 +17636,7 @@ module.exports = "### Import\n```\nimport { Input } from '@monsoon_inc/monsoon-c
 /* 114 */
 /***/ (function(module, exports) {
 
-module.exports = "------\n\n### Import\n\n```\nimport { Modal, ConfirmationModal } from '@monsoon_inc/monsoon-components';\n```\n&nbsp;\n\n-------\n\n### Examples:\n```\n<Modal open='true'>\n  <div> I am in a modal! </div>\n</Modal>\n\n<ConfirmationModal\n  open={this.state.confirmationModalOpen}\n  onConfirm={this.confirmationModalClose}\n  onClose={this.confirmationModalClose}\n  message={'Are you sure you want to close the Confirmation Modal'}\n/>\n```\n&nbsp;\n\n-------\n\n### props:\n- open: Boolean that determines whether the modal displays or not\n- onConfirm: Function triggered when user clicks on \"Yes\"\n- onConfirm: Function triggered when user clicks on \"No\"\n- message: String displayed to the user in the modal\n"
+module.exports = "------\n\n### Import\n\n```\nimport { Modal, ConfirmationModal } from '@monsoon_inc/monsoon-components';\n```\n&nbsp;\n\n-------\n\n### Examples:\n```\n<Modal open='true' onClose={this.toggleModal}>\n  <div> I am in a modal! </div>\n</Modal>\n\n<ConfirmationModal\n  open={this.state.confirmationModalOpen}\n  onConfirm={this.confirmationModalClose}\n  onClose={this.confirmationModalClose}\n  message={'Are you sure you want to close the Confirmation Modal'}\n/>\n```\n&nbsp;\n\n-------\n\n### props:\n- open: Boolean that determines whether the modal displays or not\n- onConfirm: Function triggered when user clicks on \"Yes\"\n- onConfirm: Function triggered when user clicks on \"No\"\n- message: String displayed to the user in the modal\n- onClose: function that occurs when the modal is closed (or when the user clicks on the overlay)\n"
 
 /***/ }),
 /* 115 */
@@ -17732,9 +17739,23 @@ var CardDev = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_1__development_devComponents_DisplaySection_dev_js__["a" /* default */],
           { label: 'Default Card' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h1',
-            null,
-            'Card'
+            __WEBPACK_IMPORTED_MODULE_2__Card__["default"],
+            { title: 'Hello' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              null,
+              ' I am the card body '
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              null,
+              ' I am the card body '
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              null,
+              ' I am the card body '
+            )
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -17783,8 +17804,22 @@ var Card = function (_React$Component) {
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "div",
-        { className: "Card-wrapper" },
-        "Hello, I am Card"
+        { className: "card" },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { className: "card__head" },
+          this.props.title
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { className: "card__body" },
+          this.props.children
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { className: "card__footer" },
+          "footer"
+        )
       );
     }
   }]);
@@ -17801,7 +17836,7 @@ Card.propTypes = {};
 /* 121 */
 /***/ (function(module, exports) {
 
-module.exports = "# Card\n\n### Import\n```\nimport { Card } from '@monsoon_inc/component-library';\n```\n\n### Render Example\n```\n  <Card />\n```\n\n### Props\n  - N/A\n"
+module.exports = "# Card\n\n### Import\n```\nimport { Card } from '@monsoon_inc/component-library';\n```\n\n### Render Example\n```\n  <Card title=\"Hello!\" />\n```\n\n### Props\n  - title: <string> : will be the title\n"
 
 /***/ })
 /******/ ]);

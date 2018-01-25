@@ -7,8 +7,8 @@ import { Card } from '@monsoon_inc/component-library';
 
 ### Render Example
 ```
-  <Card />
+  <Card title="Hello!" />
 ```
 
 ### Props
-  - N/A
+  - title: <string> : will be the title

@@ -14,7 +14,11 @@ class CardDev extends React.Component {
 
       <div>
         <DevSection label="Default Card">
-          <h1>Card</h1>
+          <Card title="Hello">
+            <div> I am the card body </div>
+            <div> I am the card body </div>
+            <div> I am the card body </div>
+          </Card>
         </DevSection>
         <div className="markdown-body">
           <MarkdownRenderer markdown={cardGuide} />

@@ -144,7 +144,7 @@ class Form extends React.Component {
       );
 
       const onKeyUp = submitOnEnter ? this.onKeyUp : () => null;
-      const errorsDisplay = submitted && input.errors.length >= 1 ? <div> <Icon type="attention"/> {input.errors[0]} </div>  : null;
+      const errorsDisplay = submitted && input.errors.length >= 1 ? <div> <Icon type="warning"/> {input.errors[0]} </div>  : null;
       // const errorsDisplay = null;
 
       console.log(input.errors, this.state);

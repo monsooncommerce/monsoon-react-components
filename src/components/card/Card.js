@@ -7,8 +7,16 @@ class Card extends React.Component {
 
   render() {
     return (
-      <div className="Card-wrapper">
-        Hello, I am Card
+      <div className="card">
+        <div className="card__head">
+          {this.props.title}
+        </div>
+        <div className="card__body">
+          { this.props.children }
+        </div>
+        <div className="card__footer">
+          footer
+        </div>
       </div>
     );
   }

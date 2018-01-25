@@ -11,7 +11,7 @@ import { Modal, ConfirmationModal } from '@monsoon_inc/monsoon-components';
 
 ### Examples:
 ```
-<Modal open='true'>
+<Modal open='true' onClose={this.toggleModal}>
   <div> I am in a modal! </div>
 </Modal>
 
@@ -31,3 +31,4 @@ import { Modal, ConfirmationModal } from '@monsoon_inc/monsoon-components';
 - onConfirm: Function triggered when user clicks on "Yes"
 - onConfirm: Function triggered when user clicks on "No"
 - message: String displayed to the user in the modal
+- onClose: function that occurs when the modal is closed (or when the user clicks on the overlay)

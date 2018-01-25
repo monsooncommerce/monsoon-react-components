@@ -1,13 +1,12 @@
 .input {
   border: 2px solid $border-color;
   border-radius: $border-radius;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: $xs-padding;
   min-width: 40px;
   display: flex;
   // justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: $md-font-size;
   background: white;
   overflow: hidden;
   @include interactable;
@@ -28,10 +27,8 @@
 
   &__input {
     border: none;
-    // width: 35px;
-    // text-align: right;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: $border-radius;
+    font-size: $md-font-size;
     min-width: 1px;
     &::-ms-clear {
       width : 0;
@@ -51,7 +48,7 @@
       display: flex;
       align-items: center;
       margin-left: 1px;
-      margin-right: 8px;
+      margin-right: $md-margin;
     }
   }
 }

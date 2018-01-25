@@ -8,14 +8,14 @@
   }
 
   &__cell {
-    padding: 10px;
+    padding: $md-margin;
     display: flex;
     flex-grow: 1;
-    font-size: 1.3rem;
+    font-size: $md-font-size;
     font-weight: 500;
     color: #555;
     border-color: #555;
-    border-radius: 5px;
+    border-radius: $border-radius;
     border-width: .5px;
 
     &.value {

@@ -57,5 +57,6 @@ const inputsConfig = [
     - name: <string> : name of button
     - type: <string> : type of button (see button options)
     - label: <string> : label of the button
-    - action: <string> :
-      - submit (to submit the form)
+    - action: <string> or <function>:
+      - functions passed in will fire when the buttons are clicked
+      - ### IMPORTANT! The internal method 'onSubmit' is not the same as the onSubmit passed in as a prop. So if you want a button to submit the form, you have to use the string 'submit' as the value of action

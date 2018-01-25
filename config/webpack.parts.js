@@ -71,18 +71,23 @@ exports.loadStyles = ({include, exclude} = {}) => ({
         include,
         exclude,
         use: [
-          { loader: 'style-loader', options: {sourceMap: true}},
-          { loader: 'css-loader', options: {sourceMap: true, modules: false}},
-          {
+         { loader: 'style-loader', options: {sourceMap: true}},
+         { loader: 'css-loader', options: {sourceMap: true, modules: false}},
+         {
             loader: 'postcss-loader',
             options: {
               plugins: () => ([
-                require('autoprefixer')()
-              ]),
+              require('autoprefixer')()
+             ]),
             },
           },
           { loader: 'resolve-url-loader'},
-          { loader: 'sass-loader', options: {sourceMap: true}}
+          { loader: 'sass-loader', options:
+            {
+              sourceMap: true,
+              includePaths: ['node_modules', 'src', '.']
+            }
+          }
         ]
       }
     ]
