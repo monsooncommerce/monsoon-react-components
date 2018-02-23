@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from '../icons';
+import PropTypes from 'prop-types';
 
 class Button extends React.Component {
   constructor(props) {
@@ -35,6 +36,13 @@ class Button extends React.Component {
     return button;
   }
 }
+
+Button.propTypes = {
+  label: PropTypes.string,
+  onClick: PropTypes.func,
+  type: PropTypes.string,
+  icon: PropTypes.string,
+};
 
 Button.defaultProps = {
   label: 'Click me!',
