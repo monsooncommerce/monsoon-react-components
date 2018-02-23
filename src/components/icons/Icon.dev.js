@@ -14,7 +14,7 @@ class IconDev extends React.Component {
   displayAllIcons(icons) {
     return Object.keys(icons).map((iconName)=> {
       return (
-        <div className="icon-box">
+        <div className="icon-box" key={`${iconName}`}>
           <div className="icon-title">{iconName}</div>
           <Icon type={iconName} />
         </div>

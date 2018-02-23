@@ -1,7 +1,7 @@
 import React from 'react';
 import merge from 'deepmerge';
 import clone from 'clone';
-import PropTypes from 'propt-types';
+import PropTypes from 'prop-types';
 
 import Input from '../input/Input';
 import Button from '../buttons/Button';
@@ -257,8 +257,8 @@ class Form extends React.Component {
 }
 
 Form.propTypes = {
-  inputsConfig: PropTypes.object,
-  buttonsConfig: PropTypes.object,
+  inputsConfig: PropTypes.array,
+  buttonsConfig: PropTypes.array,
   onSubmit: PropTypes.func,
 };
 

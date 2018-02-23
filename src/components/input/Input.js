@@ -107,10 +107,13 @@ Input.defaultProps = {
   onBlur: () => true,
 };
 
-Input.defaultProps = {
+Input.propsTypes = {
   onChange: PropTypes.func,
   onKeyUp: PropTypes.func,
   onBlur: PropTypes.func,
+  value: PropTypes.string,
+  name: PropTypes.string,
+  autofocus: PropTypes.bool,
 };
 
 export default Input;

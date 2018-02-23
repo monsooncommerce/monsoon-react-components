@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class ConfirmationModal extends React.Component {
   constructor(props) {
@@ -41,6 +42,13 @@ ConfirmationModal.defaultProps = {
   onConfirm: () => {console.log('Modal Confirmed');},
   onClose: () => {console.log('Modal Confirmed');},
   message: 'This is the message',
+};
+
+ConfirmationModal.propTypes = {
+  onConfirm: PropTypes.func,
+  onClose: PropTypes.func,
+  open: PropTypes.bool,
+  message: PropTypes.string,
 };
 
 // ConfirmationModal.propTypes = {

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -43,10 +44,14 @@ Modal.defaultProps = {
   open: false,
 };
 
-// Modal.propTypes = {
-//   onConfirm: React.PropTypes.func,
-//   onClose: React.PropTypes.func,
-//   open: React.PropTypes.bool,
-// };
+Modal.propTypes = {
+  onConfirm: PropTypes.func,
+  onClose: PropTypes.func,
+  open: PropTypes.bool,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ])
+};
 
 export default Modal;

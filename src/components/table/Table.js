@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Table extends React.Component {
   constructor(props) {
@@ -34,13 +35,21 @@ class Table extends React.Component {
     const rows = this.getRows(data, scopeClass);
 
     return (
-      <div className={`table`} key={`I love cows`}>
+      <div className={`I am a row!`} key={`I am a value!`}>
         {rows}
       </div>
     );
   }
 }
 
-Table.defaultProps = {};
+Table.defaultProps = {
+  data: {},
+  config: {},
+};
+
+Table.propTypes = {
+  data: PropTypes.object,
+  config: PropTypes.object,
+};
 
 export default Table;

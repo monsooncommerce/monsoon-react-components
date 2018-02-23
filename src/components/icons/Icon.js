@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import icons from './iconSvgBank';
 
 class Icon extends React.Component {
@@ -36,9 +36,9 @@ class Icon extends React.Component {
 
 Icon.defaultProps = { type: 'column' };
 Icon.propTypes = {
-  width: propTypes.number,
-  height: propTypes.number,
-  type: propTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  type:  PropTypes.string,
 };
 
 export default Icon;

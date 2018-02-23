@@ -25,7 +25,7 @@ class ModalDev extends React.Component {
       <div>
 
         <DevSection key="default" className='modal-dev' label="Modal">
-          <Modal open='true'>
+          <Modal open={true}>
             <div> I am in a modal! </div>
           </Modal>
         </DevSection>
