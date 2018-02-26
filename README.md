@@ -10,6 +10,8 @@ To Install:
 
   `git clone https://github.com/monsooncommerce/monsoon-react-components.git`
   
+  `cd monsoon-react-components`
+  
   `npm i`
 
 To Run with webpack-dev-server:
