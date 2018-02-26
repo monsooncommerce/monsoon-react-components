@@ -1,9 +1,10 @@
 # Monsoon React components
 
 #### A collection of React.js components, intended to be consumed via npm, that may be shared across multiple apps.
------
 
-Once started, the guide on the home page will instruct you on how to add components and include them in the code.
+##### Once started, the guide on the home page will instruct you on how to add components and include them in your React App.
+
+-------
 
 To Install:
 
